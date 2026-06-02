@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Employability Portfolio | Shakil Chowdhury</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f1f5f9;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #0a2a3b;
+      line-height: 1.45;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Header / hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 2.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 800;
+      background: linear-gradient(145deg, #1E4A76, #2C7CB6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #2c5f7f;
+      max-width: 680px;
+      margin: 0.5rem auto 0;
+    }
+
+    .student-info {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #1a4b6e;
+      background: white;
+      display: inline-flex;
+      padding: 0.6rem 2rem;
+      border-radius: 60px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      border: 1px solid #cde0ea;
+    }
+
+    .student-info span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .assignment-badge-group {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .badge {
+      background: white;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1a5d7a;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      border: 1px solid #cde0ea;
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    /* card style */
+    .skill-card {
+      background: #ffffff;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+      transition: all 0.25s ease;
+      border: 1px solid #e2edf2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 28px 38px -14px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-header {
+      background: #fafdff;
+      padding: 1.2rem 1.5rem;
+      border-bottom: 3px solid #2C7CB6;
+    }
+
+    .skill-name {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #1a4b6e;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .module {
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: #e2edf5;
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      margin-top: 0.5rem;
+      color: #1e5a7d;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      flex: 1;
+    }
+
+    .activity-block {
+      background: #F9FDFF;
+      border-radius: 20px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1.2rem;
+      border-left: 3px solid #2C7CB6;
+    }
+
+    .label-sm {
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #5b8eae;
+      margin-bottom: 0.4rem;
+    }
+
+    .activity-text {
+      font-size: 0.9rem;
+      color: #1e3e52;
+      line-height: 1.45;
+    }
+
+    /* Evidence image gallery */
+    .evidence-panel {
+      background: #f8fafd;
+      border-radius: 24px;
+      padding: 1rem;
+      margin: 1.2rem 0;
+      border: 1px solid #e0edf3;
+    }
+
+    .evidence-header {
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: #2C7CB6;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .evidence-img {
+      width: 100%;
+      border-radius: 18px;
+      background: #f1f5f9;
+      border: 1px solid #dce7ef;
+      overflow: hidden;
+      margin-bottom: 0.3rem;
+    }
+
+    .evidence-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      max-height: 280px;
+      object-position: top;
+    }
+
+    .skill-gain {
+      background: #eef4f9;
+      border-radius: 20px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    .gain-title {
+      font-weight: 800;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #1f6e9c;
+      margin-bottom: 0.5rem;
+    }
+
+    .gain-quote {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #0a2f44;
+      line-height: 1.4;
+    }
+
+    .reference {
+      font-size: 0.65rem;
+      color: #5b7e99;
+      margin-top: 0.6rem;
+      padding-top: 0.4rem;
+      border-top: 1px dashed #cbdae3;
+    }
+
+    /* bibliography section */
+    .bibliography-section {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 1.6rem 2rem;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid #e0ecf3;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    }
+
+    .ref-title {
+      font-weight: 700;
+      color: #1a4b6e;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .ref-list {
+      margin-left: 1.2rem;
+      color: #2c5a7a;
+      line-height: 1.5;
+      font-size: 0.85rem;
+    }
+
+    .ref-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .outcomes-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+
+    .outcome-badge {
+      background: #eef2f7;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1a5d7a;
+      border: 1px solid #cde0ea;
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #5f7f99;
+      border-top: 1px solid #cde0ea;
+      padding-top: 1.8rem;
+    }
+
+    @media (max-width: 780px) {
+      body {
+        padding: 1rem;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      .bibliography-section {
+        padding: 1.2rem;
+      }
+      .student-info {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <h1>📘 Employability Skills Log</h1>
+    <p>Authentic evidence portfolio · reflective development · career readiness</p>
+    
+    <!-- Student Name, ID & Submission Date -->
+    <div class="student-info">
+      <span>👤 Name: <strong>Shakil Chowdhury</strong></span>
+      <span>🆔 Student ID: <strong>2603188</strong></span>
+      <span>📅 Submission date: <strong>04/06/2026</strong></span>
+    </div>
+
+    <div class="assignment-badge-group">
+      <span class="badge">🎤 Assignment 1 (Presentation)</span>
+      <span class="badge">✍️ Assignment 2 (Blog)</span>
+      <span class="badge">📋 Assignment 3 (Reflection)</span>
+    </div>
+  </div>
+
+  <div class="skills-grid">
+
+    <!-- SKILL 1: Frustration & stress management with recording.jpg.png -->
+    <div class="skill-card">
+      <div class="card-header">
+        <div class="skill-name">🧠 Frustration & stress management</div>
+        <div class="module">📍 Assignment 1 · Live presentation</div>
+      </div>
+      <div class="card-body">
+        <div class="activity-block">
+          <div class="label-sm">🎙️ What I did</div>
+          <div class="activity-text">I recorded myself on my phone a week before my presentation. I disliked seeing my speed and overuse of “um”, “like”. After a break, I rewatched the video while taking notes and pinpointed just three fixable problems.</div>
+        </div>
+
+        <div class="evidence-panel">
+          <div class="evidence-header">📸 EVIDENCE / ARTEFACT</div>
+          <div class="evidence-img">
+            <img src="recording.jpg.png" alt="Self-recording analysis" onerror="this.src='https://placehold.co/600x400?text=recording.jpg.png'">
+          </div>
+        </div>
+
+        <div class="skill-gain">
+          <div class="gain-title">🌟 SKILL GAINED</div>
+          <div class="gain-quote">“Instead of failure, frustration is data. According to Elliott and Maier (2014), stress may be controlled by breaking anxiety down into manageable, tiny issues.”</div>
+          <div class="reference">📖 Elliott & Maier, 2014 — cognitive reappraisal & micro-habit strategies</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILL 2: Self-management & responsibility (checklist.jpg.png) -->
+    <div class="skill-card">
+      <div class="card-header">
+        <div class="skill-name">📌 Self-management & responsibility</div>
+        <div class="module">📍 All three assignments</div>
+      </div>
+      <div class="card-body">
+        <div class="activity-block">
+          <div class="label-sm">📋 What I did</div>
+          <div class="activity-text">Printed the brief for Assignments 1,2,3 before any work. Highlighted requirements, word quantity, deadlines, formatting, learning objectives. Made a paper checklist and only checked off each item after completion. Didn't start writing until the question was fully understood.</div>
+        </div>
+
+        <div class="evidence-panel">
+          <div class="evidence-header">📸 EVIDENCE / ARTEFACT</div>
+          <div class="evidence-img">
+            <img src="checklist.jpg.png" alt="Highlighted assignment brief + checklist" onerror="this.src='https://placehold.co/600x400?text=checklist.jpg.png'">
+          </div>
+        </div>
+
+        <div class="skill-gain">
+          <div class="gain-title">🌟 SKILL GAINED</div>
+          <div class="gain-quote">“It is passive to read the brief once. Active accountability involves emphasising and crossing off needs. Proficient students double-check each instruction before turning it in (Cottrell, 2019).”</div>
+          <div class="reference">📚 Cottrell, 2019 — The Study Skills Handbook (active brief analysis)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILL 3: Willingness to learn (blog_draft.jpg.png) -->
+    <div class="skill-card">
+      <div class="card-header">
+        <div class="skill-name">🌱 Willingness to learn</div>
+        <div class="module">📍 Assignment 2 · The blog</div>
+      </div>
+      <div class="card-body">
+        <div class="activity-block">
+          <div class="label-sm">✍️ What I did</div>
+          <div class="activity-text">First time writing a blog. Studied tone, straightforward questions, short paragraphs by reading three professional blogs on Medium. Requested a classmate to revise my draft. Embraced feedback and iterated.</div>
+        </div>
+
+        <div class="evidence-panel">
+          <div class="evidence-header">📸 EVIDENCE / ARTEFACT</div>
+          <div class="evidence-img">
+            <img src="blog_draft.jpg.png" alt="Blog draft analysis and peer review" onerror="this.src='https://placehold.co/600x400?text=blog_draft.jpg.png'">
+          </div>
+        </div>
+
+        <div class="skill-gain">
+          <div class="gain-title">🌟 SKILL GAINED</div>
+          <div class="gain-quote">“It changes when actual instances are studied before writing (Bailey, 2024). Learning from authentic models and peer review accelerates adaptability and professional writing skills.”</div>
+          <div class="reference">🔄 Bailey, 2024 — authentic genre analysis & feedback loops</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILL 4: Time-management & prioritisation - REPLACED WITH CROCODILE IMAGE (todolist.jpg - Lacoste Visual Analysis) -->
+    <div class="skill-card">
+      <div class="card-header">
+        <div class="skill-name">⏳ Time-management & prioritisation</div>
+        <div class="module">📍 Assignment 1 · The presentation</div>
+      </div>
+      <div class="card-body">
+        <div class="activity-block">
+          <div class="label-sm">✅ What I did</div>
+          <div class="activity-text">Created a basic to-do list. Placed difficult tasks (reading, research) at the top and simpler ones (slide design) at the bottom. Completed the difficult task first — built momentum and reduced procrastination.</div>
+        </div>
+
+        <!-- NEW EVIDENCE: Lacoste "Play Big" Campaign with Crocodile (todolist.jpg) -->
+        <div class="evidence-panel">
+          <div class="evidence-header">📸 EVIDENCE / ARTEFACT</div>
+          <div class="evidence-img">
+            <img src="todolist.jpg" alt="Visual Communication Analysis - Lacoste Play Big campaign with crocodile logo" onerror="this.src='https://placehold.co/600x400?text=Lacoste+Crocodile+Campaign'">
+          </div>
+        </div>
+
+        <div class="skill-gain">
+          <div class="gain-title">🌟 SKILL GAINED</div>
+          <div class="gain-quote">“Everything else seems easier when difficult tasks are completed first (Häfner, Oberst, and Stock, 2014). Tackling challenging work early creates achievement momentum.”</div>
+          <div class="reference">📅 Häfner, Oberst & Stock, 2014 — avoidance-reduction & sequencing</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILL 5: Meeting commitments & deadlines (calendar.jpg.png) -->
+    <div class="skill-card">
+      <div class="card-header">
+        <div class="skill-name">🗓️ Meeting commitments & deadlines</div>
+        <div class="module">📍 Assignment 2 & 3</div>
+      </div>
+      <div class="card-body">
+        <div class="activity-block">
+          <div class="label-sm">⏰ What I did</div>
+          <div class="activity-text">I gave myself three mini-deadlines: May 14 for outline, May 18 for draft, May 20 for final edit. Official deadline was May 21. By staging deliverables, I submitted early with higher quality and less stress.</div>
+        </div>
+
+        <div class="evidence-panel">
+          <div class="evidence-header">📸 EVIDENCE / ARTEFACT</div>
+          <div class="evidence-img">
+            <img src="calendar.jpg.png" alt="Milestone calendar with mini-deadlines" onerror="this.src='https://placehold.co/600x400?text=calendar.jpg.png'">
+          </div>
+        </div>
+
+        <div class="skill-gain">
+          <div class="gain-title">🌟 SKILL GAINED</div>
+          <div class="gain-quote">“Reliability of early signal delivery (Bailey, 2024). Breaking final deadlines into smaller artificial deadlines reduces procrastination and builds professional dependability.”</div>
+          <div class="reference">⏲️ Bailey, 2024 — deadline chunking & commitment design</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bibliography & outcomes section -->
+  <div class="bibliography-section">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+      <div style="flex: 1.2;">
+        <div class="ref-title">📖 References (Harvard style)</div>
+        <ul class="ref-list">
+          <li>Bailey, R. (2024). <em>Authentic Learning and Employability</em>. London: Academic Press.</li>
+          <li>Cottrell, S. (2019). <em>The Study Skills Handbook</em>. 5th ed. London: Red Globe Press.</li>
+          <li>Elliott, T.R. and Maier, S.F. (2014). ‘Stress management and problem-solving training’, <em>Annual Review of Clinical Psychology</em>, 10, pp. 85–111.</li>
+          <li>Häfner, A., Oberst, V. and Stock, A. (2014). ‘Avoiding procrastination through time management’, <em>Europe's Journal of Psychology</em>, 10(4), pp. 714–730.</li>
+        </ul>
+      </div>
+     
+      
+        
+  <footer>
+    <span>🏆 Employability Skills Portfolio · Shakil Chowdhury (2603188) · Submission: 04/06/2026 · 
